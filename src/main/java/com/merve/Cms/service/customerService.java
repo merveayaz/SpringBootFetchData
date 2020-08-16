@@ -19,7 +19,7 @@ public class customerService {
      return customer;
     }
 
-    public List<customer> getCustomerList()
+    public List<customer> getCustomers()
     {
         return customerList;
     }

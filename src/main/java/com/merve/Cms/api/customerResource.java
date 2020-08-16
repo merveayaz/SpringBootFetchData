@@ -4,10 +4,9 @@ package com.merve.Cms.api;
 import com.merve.Cms.model.customer;
 import com.merve.Cms.service.customerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -19,6 +18,18 @@ public class customerResource {
     public customer addCustomer(@RequestBody customer customer){
 
         return customerService.addCustomer(customer);
+    }
+
+    @GetMapping
+   public List<customer> getCustomers()
+   {
+       return customerService.getCustomers();
+   }
+
+   @GetMapping(value = "/{customerID}")
+    public customer getCustomer(@PathVariable("customerID") int customerID){
+
+        return customerService.getCustomer(customerID);
     }
 
 }
