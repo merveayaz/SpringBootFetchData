@@ -13,7 +13,7 @@ public class customerService {
 
     public customer addCustomer(customer customer) {
      customer.setCustomerID(customerIDCount);
-     customerList.add(customer);
+
      customerList.add(customer);
      customerIDCount++;
      return customer;
