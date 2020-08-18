@@ -1,9 +1,17 @@
 package com.merve.Cms.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class customer {
 
+    @JsonProperty("ID")
     private int customerID;
+    @JsonProperty("FirstName")
     private String customerFirstName;
+    @JsonProperty("LastName")
+    private String customerLastName;
+    @JsonProperty("Email")
+    private String customerEmail;
 
     public String getCustomerFirstName() {
         return customerFirstName;
@@ -29,8 +37,7 @@ public class customer {
         this.customerEmail = customerEmail;
     }
 
-    private String customerLastName;
-    private String customerEmail;
+
 
     public int getCustomerID() {
         return customerID;
